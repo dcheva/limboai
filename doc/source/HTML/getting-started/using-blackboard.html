@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharing data using Blackboard &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Accessing nodes in the scene tree" href="accessing-nodes.html" />
+    <link rel="prev" title="Creating custom tasks in GDScript" href="custom-tasks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sharing data using Blackboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-the-blackboard-in-a-task">Accessing the Blackboard in a Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-the-blackboard-plan">Editing the Blackboard Plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overriding-variables-in-btplayer">Overriding variables in BTPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-parameters">Task parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-topic-blackboard-scopes">Advanced topic: Blackboard scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-data-between-several-agents">Sharing data between several agents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sharing data using Blackboard</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/using-blackboard.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sharing-data-using-blackboard">
+<span id="blackboard"></span><h1>Sharing data using Blackboard<a class="headerlink" href="#sharing-data-using-blackboard" title="Link to this heading"></a></h1>
+<p>To share data between different tasks and states, we employ a feature known as the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>.
+The <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> serves as a central repository where tasks and states can store and retrieve named variables,
+allowing for seamless data interchange. Each instance of a behavior tree or a state machine gets its own dedicated <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>. It has the capability to store various data types,
+including objects and resources.</p>
+<p>Using the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>, you can easily share data in your behavior trees, making the tasks in the behavior tree more flexible.</p>
+<section id="accessing-the-blackboard-in-a-task">
+<span id="accessing-blackboard"></span><h2>Accessing the Blackboard in a Task<a class="headerlink" href="#accessing-the-blackboard-in-a-task" title="Link to this heading"></a></h2>
+<p>Every <a class="reference internal" href="../classes/class_bttask.html#class-bttask"><span class="std std-ref">BTTask</span></a> has access to the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>, providing a
+straightforward mechanism for data exchange.
+Here’s an example of how you can interact with the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> in GDScript:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">speed_var</span><span class="p">:</span><span class="w"> </span><span class="n">StringName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;speed&quot;</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Set the value of the &quot;speed&quot; variable:</span>
+<span class="w">    </span><span class="n">blackboard</span><span class="o">.</span><span class="n">set_var</span><span class="p">(</span><span class="n">speed_var</span><span class="p">,</span><span class="w"> </span><span class="mf">200.0</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># Get the value of the &quot;speed&quot; variable, with a default value of 100.0 if not found:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blackboard</span><span class="o">.</span><span class="n">get_var</span><span class="p">(</span><span class="n">speed_var</span><span class="p">,</span><span class="w"> </span><span class="mf">100.0</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># Check if the &quot;speed&quot; variable exists:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">blackboard</span><span class="o">.</span><span class="n">has_var</span><span class="p">(</span><span class="n">speed_var</span><span class="p">):</span>
+<span class="w">        </span><span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>It is recommended to suffix variable name properties with <code class="docutils literal notranslate"><span class="pre">_var</span></code>, like in the example above, which enables the
+inspector to provide a more convenient property editor for the variable. This editor
+allows you to select or add the variable to the blackboard plan, and provides a
+warning icon if the variable does not exist in the blackboard plan.</p>
+<blockquote>
+<div><p><strong>🛈 Note:</strong> The variable doesn’t need to exist when you set it in code.</p>
+</div></blockquote>
+</section>
+<section id="editing-the-blackboard-plan">
+<span id="editing-plan"></span><h2>Editing the Blackboard Plan<a class="headerlink" href="#editing-the-blackboard-plan" title="Link to this heading"></a></h2>
+<p>The Blackboard Plan, associated with each <a class="reference internal" href="../classes/class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>
+resource, dictates how the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> initializes for each
+new instance of the <a class="reference internal" href="../classes/class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>.
+BlackboardPlan resource stores default values, type information, and data bindings
+necessary for <a class="reference internal" href="../classes/class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> initialization.</p>
+<p>To add, modify, or remove variables from the Blackboard Plan, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open the LimboAI editor and load the behavior tree you want to edit.</p></li>
+<li><p>In the editor, click on the small button located inside the tab. This will open the <a class="reference internal" href="../classes/class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a> in the Inspector.</p></li>
+<li><p>In the Inspector, click the “Manage…” button to show the blackboard plan editor.</p></li>
+<li><p>In the blackboard plan editor, you can add, remove, or reorder variables, and modify their data type and hint.</p></li>
+<li><p>The hint provides additional information about the variable to the Inspector, such as minimum and maximum values for an integer variable. Learn more about <a class="reference external" href="https://docs.godotengine.org/en/stable/classes/class_%40globalscope.html#enum-globalscope-propertyhint">property hints in the official Godot documentation</a>.</p></li>
+<li><p>You can specify the default values of the variables directly in the Inspector.</p></li>
+</ol>
+</section>
+<section id="overriding-variables-in-btplayer">
+<h2>Overriding variables in BTPlayer<a class="headerlink" href="#overriding-variables-in-btplayer" title="Link to this heading"></a></h2>
+<p>Each <a class="reference internal" href="../classes/class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a> node also has a “Blackboard Plan” property,
+providing the ability to override values of the BehaviorTree’s blackboard variables.
+These overrides are specific to the BTPlayer’s scene
+and do not impact other scenes using the same <a class="reference internal" href="../classes/class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>.
+To modify these values:</p>
+<ol class="arabic simple">
+<li><p>Select the BTPlayer node in the scene tree.</p></li>
+<li><p>In the Inspector, locate the “Blackboard Plan” property.</p></li>
+<li><p>Override the desired values to tailor the blackboard variables for the specific scene.</p></li>
+</ol>
+</section>
+<section id="task-parameters">
+<h2>Task parameters<a class="headerlink" href="#task-parameters" title="Link to this heading"></a></h2>
+<p>In some cases, it can be beneficial to allow behavior tree tasks to export parameters
+that can either be <strong>bound to a blackboard variable or specified directly</strong> by the user.
+For this purpose, LimboAI provides special parameter types that begin with “BB”,
+such as <a class="reference internal" href="../classes/class_bbint.html#class-bbint"><span class="std std-ref">BBInt</span></a>, <a class="reference internal" href="../classes/class_bbbool.html#class-bbbool"><span class="std std-ref">BBBool</span></a>, <a class="reference internal" href="../classes/class_bbstring.html#class-bbstring"><span class="std std-ref">BBString</span></a>,
+<a class="reference internal" href="../classes/class_bbfloat.html#class-bbfloat"><span class="std std-ref">BBFloat</span></a>, <a class="reference internal" href="../classes/class_bbnode.html#class-bbnode"><span class="std std-ref">BBNode</span></a>, and more.
+For a complete list, please refer to the <a class="reference internal" href="../classes/class_bbparam.html#class-bbparam"><span class="std std-ref">BBParam</span></a> class reference.</p>
+<p>Usage example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">BTAction</span>
+
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="n">BBFloat</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">current_speed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">scene_root</span><span class="p">,</span><span class="w"> </span><span class="n">blackboard</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span>
+<span class="w">    </span><span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-topic-blackboard-scopes">
+<h2>Advanced topic: Blackboard scopes<a class="headerlink" href="#advanced-topic-blackboard-scopes" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> in LimboAI can act as a parent scope
+for another <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>.
+This means that if a specific variable is not found in the active scope,
+the system will look in the parent <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> to find it.
+This creates a “blackboard scope chain,” where each <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> can have its own parent scope,
+and there is no limit to how many blackboards can be in this chain.
+It’s important to note that the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> doesn’t modify values in the parent scopes.</p>
+<p>Some scopes are created automatically. For instance, when using the <a class="reference internal" href="../classes/class_btnewscope.html#class-btnewscope"><span class="std std-ref">BTNewScope</span></a>
+and <a class="reference internal" href="../classes/class_btsubtree.html#class-btsubtree"><span class="std std-ref">BTSubtree</span></a> decorators, or when a <a class="reference internal" href="../classes/class_limbostate.html#class-limbostate"><span class="std std-ref">LimboState</span></a>
+has non-empty blackboard plan defined, or when a root-level <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a>
+node is used. Such scopes prevent naming collisions between contextually separate environments.</p>
+<section id="sharing-data-between-several-agents">
+<h3>Sharing data between several agents<a class="headerlink" href="#sharing-data-between-several-agents" title="Link to this heading"></a></h3>
+<p>The blackboard scope mechanism can also be used for sharing data between several agents.
+In the following example, we have a group of agents, and we want to share a common target between them:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">BTAction</span>
+
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">group_target_var</span><span class="p">:</span><span class="w"> </span><span class="n">StringName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;group_target&quot;</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">blackboard</span><span class="o">.</span><span class="n">has_var</span><span class="p">(</span><span class="n">group_target_var</span><span class="p">):</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">new_target</span><span class="p">:</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">acquire_target</span><span class="p">()</span>
+<span class="w">        </span><span class="c1"># Set common target shared between agents in a group:</span>
+<span class="w">        </span><span class="n">blackboard</span><span class="o">.</span><span class="n">top</span><span class="p">()</span><span class="o">.</span><span class="n">set_var</span><span class="p">(</span><span class="n">group_target_var</span><span class="p">,</span><span class="w"> </span><span class="n">new_target</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># Access common target shared between agents in a group:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="n">Node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blackboard</span><span class="o">.</span><span class="n">get_var</span><span class="p">(</span><span class="n">group_target_var</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard-method-top"><span class="std std-ref">blackboard.top()</span></a> accesses the root scope of the
+<a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> chain.
+We assign that scope to each agent in a group through code:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">class_name</span><span class="w"> </span><span class="n">AgentGroup</span>
+<span class="k">extends</span><span class="w"> </span><span class="n">Node2D</span>
+<span class="c1">## AgentGroup node: Manages the shared Blackboard for agents in a group.</span>
+<span class="c1">## Children of this node are assumed to be agents that belong to a common group.</span>
+<span class="c1">## This implementation assumes that each agent has a &quot;BTPlayer&quot; node for AI.</span>
+
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">blackboard_plan</span><span class="p">:</span><span class="w"> </span><span class="n">BlackboardPlan</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">shared_scope</span><span class="p">:</span><span class="w"> </span><span class="n">Blackboard</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">blackboard_plan</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">:</span>
+<span class="w">        </span><span class="n">shared_scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Blackboard</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="n">shared_scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blackboard_plan</span><span class="o">.</span><span class="n">create_blackboard</span><span class="p">()</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">child</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">get_children</span><span class="p">():</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">bt_player</span><span class="p">:</span><span class="w"> </span><span class="n">BTPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="o">.</span><span class="n">find_child</span><span class="p">(</span><span class="s2">&quot;BTPlayer&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">is_instance_valid</span><span class="p">(</span><span class="n">bt_player</span><span class="p">):</span>
+<span class="w">            </span><span class="n">bt_player</span><span class="o">.</span><span class="n">blackboard</span><span class="o">.</span><span class="n">set_parent</span><span class="p">(</span><span class="n">shared_scope</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In conclusion, the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> scope chain not only
+prevents naming conflicts that can occur between state machines, behavior trees, and sub-trees,
+but it can also be used to share data between several agents.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="custom-tasks.html" class="btn btn-neutral float-left" title="Creating custom tasks in GDScript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="accessing-nodes.html" class="btn btn-neutral float-right" title="Accessing nodes in the scene tree" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

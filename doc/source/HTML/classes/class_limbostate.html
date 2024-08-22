@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimboState &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LimboHSM" href="class_limbohsm.html" />
+    <link rel="prev" title="BBParam" href="class_bbparam.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LimboState</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting-started/featured-classes.html">Important classes</a></li>
+      <li class="breadcrumb-item active">LimboState</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="limbostate">
+<span id="class-limbostate"></span><h1>LimboState<a class="headerlink" href="#limbostate" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_btstate.html#class-btstate"><span class="std std-ref">BTState</span></a>, <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a></p>
+<p>A state node for Hierarchical State Machines (HSM).</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>A LimboAI state node for Hierarchical State Machines (HSM).</p>
+<p>You can create your state behavior by extending this class. To implement your state logic, you can override <a class="reference internal" href="#class-limbostate-private-method-enter"><span class="std std-ref">_enter</span></a>, <a class="reference internal" href="#class-limbostate-private-method-exit"><span class="std std-ref">_exit</span></a>, <a class="reference internal" href="#class-limbostate-private-method-setup"><span class="std std-ref">_setup</span></a>, and <a class="reference internal" href="#class-limbostate-private-method-update"><span class="std std-ref">_update</span></a>. Alternatively, you can delegate state implementation to external methods using the <code class="docutils literal notranslate"><span class="pre">call_on_*</span></code> methods.</p>
+<p>For additional details on state machines, refer to <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a>.</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">StringName</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-property-event-finished"><span class="std std-ref">EVENT_FINISHED</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Node</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-property-agent"><span class="std std-ref">agent</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-property-blackboard"><span class="std std-ref">blackboard</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-property-blackboard-plan"><span class="std std-ref">blackboard_plan</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-private-method-enter"><span class="std std-ref">_enter</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-private-method-exit"><span class="std std-ref">_exit</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-private-method-setup"><span class="std std-ref">_setup</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-private-method-update"><span class="std std-ref">_update</span></a>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-add-event-handler"><span class="std std-ref">add_event_handler</span></a>(event: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, handler: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-call-on-enter"><span class="std std-ref">call_on_enter</span></a>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-call-on-exit"><span class="std std-ref">call_on_exit</span></a>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-call-on-update"><span class="std std-ref">call_on_update</span></a>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-clear-guard"><span class="std std-ref">clear_guard</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-dispatch"><span class="std std-ref">dispatch</span></a>(event: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, cargo: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-get-root"><span class="std std-ref">get_root</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-is-active"><span class="std std-ref">is_active</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-named"><span class="std std-ref">named</span></a>(name: <code class="docutils literal notranslate"><span class="pre">String</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-limbostate-method-set-guard"><span class="std std-ref">set_guard</span></a>(guard_callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Link to this heading"></a></h2>
+<p class="classref-signal" id="class-limbostate-signal-entered"><strong>entered</strong>() <a class="reference internal" href="#class-limbostate-signal-entered"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the state is entered.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-signal" id="class-limbostate-signal-exited"><strong>exited</strong>() <a class="reference internal" href="#class-limbostate-signal-exited"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the state is exited.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-signal" id="class-limbostate-signal-setup"><strong>setup</strong>() <a class="reference internal" href="#class-limbostate-signal-setup"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the state is initialized.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-signal" id="class-limbostate-signal-updated"><strong>updated</strong>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <a class="reference internal" href="#class-limbostate-signal-updated"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when the state is updated.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-limbostate-property-event-finished"><code class="docutils literal notranslate"><span class="pre">StringName</span></code> <strong>EVENT_FINISHED</strong> <a class="reference internal" href="#class-limbostate-property-event-finished"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">StringName</span></code> <strong>event_finished</strong>()</p></li>
+</ul>
+<p>A commonly used event that indicates that the state has finished its work.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-limbostate-property-agent"><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>agent</strong> <a class="reference internal" href="#class-limbostate-property-agent"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_agent</strong>(value: <code class="docutils literal notranslate"><span class="pre">Node</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>get_agent</strong>()</p></li>
+</ul>
+<p>An agent associated with the state, assigned during initialization.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-limbostate-property-blackboard"><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>blackboard</strong> <a class="reference internal" href="#class-limbostate-property-blackboard"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>get_blackboard</strong>()</p></li>
+</ul>
+<p>A key/value data store shared by states within the state machine to which this state belongs.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-limbostate-property-blackboard-plan"><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a> <strong>blackboard_plan</strong> <a class="reference internal" href="#class-limbostate-property-blackboard-plan"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_blackboard_plan</strong>(value: <a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a>)</p></li>
+<li><p><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a> <strong>get_blackboard_plan</strong>()</p></li>
+</ul>
+<p>Stores and manages variables that will be used in constructing new <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> instances.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-limbostate-private-method-enter"><abbr title="No return value.">void</abbr> <strong>_enter</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-limbostate-private-method-enter"><span class="std std-ref">🔗</span></a></p>
+<p>Called when the state is entered.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-private-method-exit"><abbr title="No return value.">void</abbr> <strong>_exit</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-limbostate-private-method-exit"><span class="std std-ref">🔗</span></a></p>
+<p>Called when the state is exited.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-private-method-setup"><abbr title="No return value.">void</abbr> <strong>_setup</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-limbostate-private-method-setup"><span class="std std-ref">🔗</span></a></p>
+<p>Called once during initialization. Use this method to initialize your state.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-private-method-update"><abbr title="No return value.">void</abbr> <strong>_update</strong>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-limbostate-private-method-update"><span class="std std-ref">🔗</span></a></p>
+<p>Called during the update. Implement your state’s behavior with this method.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-add-event-handler"><abbr title="No return value.">void</abbr> <strong>add_event_handler</strong>(event: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, handler: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>) <a class="reference internal" href="#class-limbostate-method-add-event-handler"><span class="std std-ref">🔗</span></a></p>
+<p>Registers a <code class="docutils literal notranslate"><span class="pre">handler</span></code> to be called when <code class="docutils literal notranslate"><span class="pre">event</span></code> is dispatched. The handler function should have the following signature:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="n">my_event_handler</span><span class="p">(</span><span class="n">cargo</span><span class="o">=</span><span class="n">null</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>If the handler returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, the event will be consumed. Cargo is an optional parameter that can be passed to the handler. See also <a class="reference internal" href="#class-limbostate-method-dispatch"><span class="std std-ref">dispatch</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-call-on-enter"><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a> <strong>call_on_enter</strong>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>) <a class="reference internal" href="#class-limbostate-method-call-on-enter"><span class="std std-ref">🔗</span></a></p>
+<p>A chained method that connects the <a class="reference internal" href="#class-limbostate-signal-entered"><span class="std std-ref">entered</span></a> signal to a <code class="docutils literal notranslate"><span class="pre">callable</span></code>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-call-on-exit"><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a> <strong>call_on_exit</strong>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>) <a class="reference internal" href="#class-limbostate-method-call-on-exit"><span class="std std-ref">🔗</span></a></p>
+<p>A chained method that connects the <a class="reference internal" href="#class-limbostate-signal-exited"><span class="std std-ref">exited</span></a> signal to a <code class="docutils literal notranslate"><span class="pre">callable</span></code>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-call-on-update"><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a> <strong>call_on_update</strong>(callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>) <a class="reference internal" href="#class-limbostate-method-call-on-update"><span class="std std-ref">🔗</span></a></p>
+<p>A chained method that connects the <a class="reference internal" href="#class-limbostate-signal-updated"><span class="std std-ref">updated</span></a> signal to a <code class="docutils literal notranslate"><span class="pre">callable</span></code>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-clear-guard"><abbr title="No return value.">void</abbr> <strong>clear_guard</strong>() <a class="reference internal" href="#class-limbostate-method-clear-guard"><span class="std std-ref">🔗</span></a></p>
+<p>Clears the guard function, removing the <code class="docutils literal notranslate"><span class="pre">Callable</span></code> previously set by <a class="reference internal" href="#class-limbostate-method-set-guard"><span class="std std-ref">set_guard</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-dispatch"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>dispatch</strong>(event: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, cargo: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null) <a class="reference internal" href="#class-limbostate-method-dispatch"><span class="std std-ref">🔗</span></a></p>
+<p>Recursively dispatches a state machine event named <code class="docutils literal notranslate"><span class="pre">event</span></code> with an optional argument <code class="docutils literal notranslate"><span class="pre">cargo</span></code>. Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the event was consumed.</p>
+<p>Events propagate from the leaf state to the root state, and propagation stops as soon as any state consumes the event. States will consume the event if they have a related transition or event handler. For more information on event handlers, see <a class="reference internal" href="#class-limbostate-method-add-event-handler"><span class="std std-ref">add_event_handler</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-get-root"><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a> <strong>get_root</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limbostate-method-get-root"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the root <strong>LimboState</strong>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-is-active"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>is_active</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limbostate-method-is-active"><span class="std std-ref">🔗</span></a></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if it is currently active, meaning it is the active substate of the parent <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-named"><a class="reference internal" href="#class-limbostate"><span class="std std-ref">LimboState</span></a> <strong>named</strong>(name: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <a class="reference internal" href="#class-limbostate-method-named"><span class="std std-ref">🔗</span></a></p>
+<p>A chained method for setting the name of this state.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limbostate-method-set-guard"><abbr title="No return value.">void</abbr> <strong>set_guard</strong>(guard_callable: <code class="docutils literal notranslate"><span class="pre">Callable</span></code>) <a class="reference internal" href="#class-limbostate-method-set-guard"><span class="std std-ref">🔗</span></a></p>
+<p>Sets the guard function, which is a function called each time a transition to this state is considered. If the function returns <code class="docutils literal notranslate"><span class="pre">false</span></code>, the transition will be disallowed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_bbparam.html" class="btn btn-neutral float-left" title="BBParam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_limbohsm.html" class="btn btn-neutral float-right" title="LimboHSM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

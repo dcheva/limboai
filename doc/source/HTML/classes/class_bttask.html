@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTTask &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BTPlayer" href="class_btplayer.html" />
+    <link rel="prev" title="Important classes" href="../getting-started/featured-classes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BTTask</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting-started/featured-classes.html">Important classes</a></li>
+      <li class="breadcrumb-item active">BTTask</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bttask">
+<span id="class-bttask"></span><h1>BTTask<a class="headerlink" href="#bttask" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_bt.html#class-bt"><span class="std std-ref">BT</span></a></p>
+<p><strong>Inherited By:</strong> <a class="reference internal" href="class_btaction.html#class-btaction"><span class="std std-ref">BTAction</span></a>, <a class="reference internal" href="class_btcomment.html#class-btcomment"><span class="std std-ref">BTComment</span></a>, <a class="reference internal" href="class_btcomposite.html#class-btcomposite"><span class="std std-ref">BTComposite</span></a>, <a class="reference internal" href="class_btcondition.html#class-btcondition"><span class="std std-ref">BTCondition</span></a>, <a class="reference internal" href="class_btdecorator.html#class-btdecorator"><span class="std std-ref">BTDecorator</span></a></p>
+<p>Base class for all <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> tasks.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>Base class for all <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> tasks. A task is a basic building block in a <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> that represents a specific behavior or control flow. Tasks are used to create complex behaviors by combining and nesting them in a hierarchy.</p>
+<p>A task can be one of the following types: action, condition, composite, or decorator. Each type of task has its own corresponding subclass: <a class="reference internal" href="class_btaction.html#class-btaction"><span class="std std-ref">BTAction</span></a>, <a class="reference internal" href="class_btcondition.html#class-btcondition"><span class="std std-ref">BTCondition</span></a>, <a class="reference internal" href="class_btdecorator.html#class-btdecorator"><span class="std std-ref">BTDecorator</span></a>, <a class="reference internal" href="class_btcomposite.html#class-btcomposite"><span class="std std-ref">BTComposite</span></a>.</p>
+<p>Tasks perform their work and return their status using the <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a> method. Status values are defined in <a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a>. Tasks can be initialized using the <a class="reference internal" href="#class-bttask-private-method-setup"><span class="std std-ref">_setup</span></a> method. See also <a class="reference internal" href="#class-bttask-private-method-enter"><span class="std std-ref">_enter</span></a> &amp; <a class="reference internal" href="#class-bttask-private-method-exit"><span class="std std-ref">_exit</span></a>.</p>
+<p><strong>Note:</strong> Do not extend <strong>BTTask</strong> directly for your own tasks. Instead, extend one of the subtypes mentioned above.</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Node</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-agent"><span class="std std-ref">agent</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-blackboard"><span class="std std-ref">blackboard</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-custom-name"><span class="std std-ref">custom_name</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-elapsed-time"><span class="std std-ref">elapsed_time</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Node</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-scene-root"><span class="std std-ref">scene_root</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-property-status"><span class="std std-ref">status</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-enter"><span class="std std-ref">_enter</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-exit"><span class="std std-ref">_exit</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-generate-name"><span class="std std-ref">_generate_name</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">PackedStringArray</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-get-configuration-warnings"><span class="std std-ref">_get_configuration_warnings</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-setup"><span class="std std-ref">_setup</span></a>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-abort"><span class="std std-ref">abort</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-add-child"><span class="std std-ref">add_child</span></a>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-add-child-at-index"><span class="std std-ref">add_child_at_index</span></a>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>, idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-clone"><span class="std std-ref">clone</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-editor-get-behavior-tree"><span class="std std-ref">editor_get_behavior_tree</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-execute"><span class="std std-ref">execute</span></a>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-child"><span class="std std-ref">get_child</span></a>(idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-child-count"><span class="std std-ref">get_child_count</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-child-count-excluding-comments"><span class="std std-ref">get_child_count_excluding_comments</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-index"><span class="std std-ref">get_index</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-parent"><span class="std std-ref">get_parent</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-root"><span class="std std-ref">get_root</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-get-task-name"><span class="std std-ref">get_task_name</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-has-child"><span class="std std-ref">has_child</span></a>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-initialize"><span class="std std-ref">initialize</span></a>(agent: <code class="docutils literal notranslate"><span class="pre">Node</span></code>, blackboard: <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>, scene_root: <code class="docutils literal notranslate"><span class="pre">Node</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-is-descendant-of"><span class="std std-ref">is_descendant_of</span></a>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-is-root"><span class="std std-ref">is_root</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-next-sibling"><span class="std std-ref">next_sibling</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-print-tree"><span class="std std-ref">print_tree</span></a>(initial_tabs: <code class="docutils literal notranslate"><span class="pre">int</span></code> = 0)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-remove-child"><span class="std std-ref">remove_child</span></a>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-bttask-method-remove-child-at-index"><span class="std std-ref">remove_child_at_index</span></a>(idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-bttask-property-agent"><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>agent</strong> <a class="reference internal" href="#class-bttask-property-agent"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_agent</strong>(value: <code class="docutils literal notranslate"><span class="pre">Node</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>get_agent</strong>()</p></li>
+</ul>
+<p>The agent is the contextual object for the <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> instance. This is usually the parent of the <a class="reference internal" href="class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a> node that utilizes the <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> resource.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-bttask-property-blackboard"><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>blackboard</strong> <a class="reference internal" href="#class-bttask-property-blackboard"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>get_blackboard</strong>()</p></li>
+</ul>
+<p>Provides access to the <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>. Blackboard is used to share data among tasks of the associated <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>.</p>
+<p>See <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> for additional info.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-bttask-property-custom-name"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>custom_name</strong> = <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> <a class="reference internal" href="#class-bttask-property-custom-name"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_custom_name</strong>(value: <code class="docutils literal notranslate"><span class="pre">String</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>get_custom_name</strong>()</p></li>
+</ul>
+<p>User-provided name for the task. If not empty, it is used by the editor to represent the task. See <a class="reference internal" href="#class-bttask-method-get-task-name"><span class="std std-ref">get_task_name</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-bttask-property-elapsed-time"><code class="docutils literal notranslate"><span class="pre">float</span></code> <strong>elapsed_time</strong> <a class="reference internal" href="#class-bttask-property-elapsed-time"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> <strong>get_elapsed_time</strong>()</p></li>
+</ul>
+<p>Elapsed time since the task was “entered”. See <a class="reference internal" href="#class-bttask-private-method-enter"><span class="std std-ref">_enter</span></a>.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">0</span></code> when task is not <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-bttask-property-scene-root"><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>scene_root</strong> <a class="reference internal" href="#class-bttask-property-scene-root"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Node</span></code> <strong>get_scene_root</strong>()</p></li>
+</ul>
+<p>Root node of the scene the behavior tree is used in (e.g., the owner of the <a class="reference internal" href="class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a> node). Can be uses to retrieve <code class="docutils literal notranslate"><span class="pre">NodePath</span></code> references.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extends</span> <span class="n">BTAction</span>
+
+<span class="nd">@export</span> <span class="n">var</span> <span class="n">node_path</span><span class="p">:</span> <span class="n">NodePath</span>
+
+<span class="n">func</span> <span class="n">_setup</span><span class="p">():</span>
+    <span class="n">var</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span> <span class="o">=</span> <span class="n">scene_root</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="n">node_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-bttask-property-status"><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a> <strong>status</strong> <a class="reference internal" href="#class-bttask-property-status"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a> <strong>get_status</strong>()</p></li>
+</ul>
+<p>Last execution <a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a> returned by <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-bttask-private-method-enter"><abbr title="No return value.">void</abbr> <strong>_enter</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-bttask-private-method-enter"><span class="std std-ref">🔗</span></a></p>
+<p>Called when task is “entered”, i.e. when task is executed while not having a <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> <a class="reference internal" href="#class-bttask-property-status"><span class="std std-ref">status</span></a>.</p>
+<p>It is called before <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a> in the execution order. This method is used when preparation is needed before main work begins, usually when it takes more than one tick to finish the task. See also <a class="reference internal" href="#class-bttask-method-execute"><span class="std std-ref">execute</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-private-method-exit"><abbr title="No return value.">void</abbr> <strong>_exit</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-bttask-private-method-exit"><span class="std std-ref">🔗</span></a></p>
+<p>Called when task is “exited”, i.e. after <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a> returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> or <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> status. See also <a class="reference internal" href="#class-bttask-method-execute"><span class="std std-ref">execute</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-private-method-generate-name"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>_generate_name</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-private-method-generate-name"><span class="std std-ref">🔗</span></a></p>
+<p>Called to generate a display name for the task unless <a class="reference internal" href="#class-bttask-property-custom-name"><span class="std std-ref">custom_name</span></a> is set. See <a class="reference internal" href="#class-bttask-method-get-task-name"><span class="std std-ref">get_task_name</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-private-method-get-configuration-warnings"><code class="docutils literal notranslate"><span class="pre">PackedStringArray</span></code> <strong>_get_configuration_warnings</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-private-method-get-configuration-warnings"><span class="std std-ref">🔗</span></a></p>
+<p>The string returned by this method is shown as a warning message in the behavior tree editor. Any task script that overrides this method must include <code class="docutils literal notranslate"><span class="pre">&#64;tool</span></code> annotation at the top of the file.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-private-method-setup"><abbr title="No return value.">void</abbr> <strong>_setup</strong>() <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-bttask-private-method-setup"><span class="std std-ref">🔗</span></a></p>
+<p>Called to initialize a task during initialization step. It is called only once before the task’s first execution tick. This method allows you to set up any necessary state or configurations for the task before it begins executing.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-private-method-tick"><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a> <strong>_tick</strong>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <abbr title="This method should typically be overridden by the user to have any effect.">virtual</abbr> <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">🔗</span></a></p>
+<p>Called when task is “ticked”, i.e. executed by <a class="reference internal" href="class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a> or <a class="reference internal" href="class_btstate.html#class-btstate"><span class="std std-ref">BTState</span></a> during an update.</p>
+<p>Returns execution status as defined in <a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a>.</p>
+<p><strong>Note:</strong> Tasks perform their main function by implementing this method.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-abort"><abbr title="No return value.">void</abbr> <strong>abort</strong>() <a class="reference internal" href="#class-bttask-method-abort"><span class="std std-ref">🔗</span></a></p>
+<p>Resets the task and its children recursively. If a task is in the <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> state, it is exited and its status is reset to <code class="docutils literal notranslate"><span class="pre">FRESH</span></code>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-add-child"><abbr title="No return value.">void</abbr> <strong>add_child</strong>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <a class="reference internal" href="#class-bttask-method-add-child"><span class="std std-ref">🔗</span></a></p>
+<p>Adds a child task. The <code class="docutils literal notranslate"><span class="pre">task</span></code> is placed at the end of the children list.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-add-child-at-index"><abbr title="No return value.">void</abbr> <strong>add_child_at_index</strong>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>, idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <a class="reference internal" href="#class-bttask-method-add-child-at-index"><span class="std std-ref">🔗</span></a></p>
+<p>Adds a child task. The <code class="docutils literal notranslate"><span class="pre">task</span></code> is placed at <code class="docutils literal notranslate"><span class="pre">idx</span></code> position in the children list.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-clone"><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>clone</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-clone"><span class="std std-ref">🔗</span></a></p>
+<p>Duplicates the task and its children, copying the exported members. Sub-resources are shared for efficiency, except for <a class="reference internal" href="class_bbparam.html#class-bbparam"><span class="std std-ref">BBParam</span></a> subtypes, which are always copied. Used by the editor to instantiate <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> and copy-paste tasks.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-editor-get-behavior-tree"><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> <strong>editor_get_behavior_tree</strong>() <a class="reference internal" href="#class-bttask-method-editor-get-behavior-tree"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the behavior tree that owns this task. This is only available in the editor.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-execute"><a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a> <strong>execute</strong>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <a class="reference internal" href="#class-bttask-method-execute"><span class="std std-ref">🔗</span></a></p>
+<p>Performs task’s execution. The execution follows a specific sequence:</p>
+<ul class="simple">
+<li><p>If task’s current <a class="reference internal" href="#class-bttask-property-status"><span class="std std-ref">status</span></a> is not <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>, the <a class="reference internal" href="#class-bttask-private-method-enter"><span class="std std-ref">_enter</span></a> method is called first.</p></li>
+<li><p>Next, the <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a> method is called next to perform the task’s work.</p></li>
+<li><p>If the <a class="reference internal" href="#class-bttask-private-method-tick"><span class="std std-ref">_tick</span></a> method returns <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> or <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code> status, the <a class="reference internal" href="#class-bttask-private-method-exit"><span class="std std-ref">_exit</span></a> method will be called next as part of the execution cleanup.</p></li>
+</ul>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-child"><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>get_child</strong>(idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-child"><span class="std std-ref">🔗</span></a></p>
+<p>Returns a child task by specifying its index.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-child-count"><code class="docutils literal notranslate"><span class="pre">int</span></code> <strong>get_child_count</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-child-count"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the number of child tasks.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-child-count-excluding-comments"><code class="docutils literal notranslate"><span class="pre">int</span></code> <strong>get_child_count_excluding_comments</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-child-count-excluding-comments"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the number of child tasks not counting <a class="reference internal" href="class_btcomment.html#class-btcomment"><span class="std std-ref">BTComment</span></a> tasks.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-index"><code class="docutils literal notranslate"><span class="pre">int</span></code> <strong>get_index</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-index"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the task’s position in the behavior tree branch. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> if the task doesn’t belong to a task tree, i.e. doesn’t have a parent.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-parent"><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>get_parent</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-parent"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the task’s parent.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-root"><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>get_root</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-get-root"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the root task of the behavior tree.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-get-task-name"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>get_task_name</strong>() <a class="reference internal" href="#class-bttask-method-get-task-name"><span class="std std-ref">🔗</span></a></p>
+<p>The string returned by this method is used to represent the task in the editor.</p>
+<p>Method <a class="reference internal" href="#class-bttask-private-method-generate-name"><span class="std std-ref">_generate_name</span></a> is called to generate a display name for the task unless <a class="reference internal" href="#class-bttask-property-custom-name"><span class="std std-ref">custom_name</span></a> is set.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-has-child"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>has_child</strong>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-has-child"><span class="std std-ref">🔗</span></a></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">task</span></code> is a child of this task.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-initialize"><abbr title="No return value.">void</abbr> <strong>initialize</strong>(agent: <code class="docutils literal notranslate"><span class="pre">Node</span></code>, blackboard: <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>, scene_root: <code class="docutils literal notranslate"><span class="pre">Node</span></code>) <a class="reference internal" href="#class-bttask-method-initialize"><span class="std std-ref">🔗</span></a></p>
+<p>Initilizes the task. Assigns <a class="reference internal" href="#class-bttask-property-agent"><span class="std std-ref">agent</span></a> and <a class="reference internal" href="#class-bttask-property-blackboard"><span class="std std-ref">blackboard</span></a>, and calls <a class="reference internal" href="#class-bttask-private-method-setup"><span class="std std-ref">_setup</span></a> for the task and its children.</p>
+<p>The method is called recursively for each child task. <code class="docutils literal notranslate"><span class="pre">scene_root</span></code> should be the root node of the scene the behavior tree is used in (e.g., the owner of the node that contains the behavior tree).</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-is-descendant-of"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>is_descendant_of</strong>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-is-descendant-of"><span class="std std-ref">🔗</span></a></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this task is a descendant of <code class="docutils literal notranslate"><span class="pre">task</span></code>. In other words, this task must be a child of <code class="docutils literal notranslate"><span class="pre">task</span></code> or one of its children or grandchildren.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-is-root"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>is_root</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-is-root"><span class="std std-ref">🔗</span></a></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this task is the root task of its behavior tree. A behavior tree can have only one root task.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-next-sibling"><a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>next_sibling</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-bttask-method-next-sibling"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the next task after this task in the parent’s children list.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">null</span></code> if this task has no parent or it is the last child in the parent’s children list.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-print-tree"><abbr title="No return value.">void</abbr> <strong>print_tree</strong>(initial_tabs: <code class="docutils literal notranslate"><span class="pre">int</span></code> = 0) <a class="reference internal" href="#class-bttask-method-print-tree"><span class="std std-ref">🔗</span></a></p>
+<p>Prints the subtree that starts with this task to the console.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-remove-child"><abbr title="No return value.">void</abbr> <strong>remove_child</strong>(task: <a class="reference internal" href="#class-bttask"><span class="std std-ref">BTTask</span></a>) <a class="reference internal" href="#class-bttask-method-remove-child"><span class="std std-ref">🔗</span></a></p>
+<p>Removes <code class="docutils literal notranslate"><span class="pre">task</span></code> from children.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-bttask-method-remove-child-at-index"><abbr title="No return value.">void</abbr> <strong>remove_child_at_index</strong>(idx: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <a class="reference internal" href="#class-bttask-method-remove-child-at-index"><span class="std std-ref">🔗</span></a></p>
+<p>Removes a child task at a specified index from children.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../getting-started/featured-classes.html" class="btn btn-neutral float-left" title="Important classes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_btplayer.html" class="btn btn-neutral float-right" title="BTPlayer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating custom tasks in GDScript &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sharing data using Blackboard" href="using-blackboard.html" />
+    <link rel="prev" title="Introduction to Behavior Trees" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating custom tasks in GDScript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-anatomy">Task anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-1-a-simple-action">Example 1: A simple action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-2-inrange-condition">Example 2: InRange condition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Creating custom tasks in GDScript</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/custom-tasks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-custom-tasks-in-gdscript">
+<span id="custom-tasks"></span><h1>Creating custom tasks in GDScript<a class="headerlink" href="#creating-custom-tasks-in-gdscript" title="Link to this heading"></a></h1>
+<p>By default, user tasks should be placed in the <code class="docutils literal notranslate"><span class="pre">res://ai/tasks</span></code>
+directory. You can set an alternative location for user tasks in the
+<code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">Settings</span> <span class="pre">→</span> <span class="pre">Limbo</span> <span class="pre">AI</span></code> (To see those options,
+<code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">Settings</span></code> should be enabled in the Project Settings).</p>
+<p>Each subdirectory within the user tasks directory is treated as a category.
+Therefore, if you create a subdirectory named “motion_and_physics,” your
+custom tasks in that directory will automatically be categorized under
+“Motion And Physics.”</p>
+<p>When creating custom tasks, <strong>extend one of the following</strong> base classes:
+<a class="reference internal" href="../classes/class_btaction.html#class-btaction"><span class="std std-ref">BTAction</span></a>, <a class="reference internal" href="../classes/class_btcondition.html#class-btcondition"><span class="std std-ref">BTCondition</span></a>, <a class="reference internal" href="../classes/class_btdecorator.html#class-btdecorator"><span class="std std-ref">BTDecorator</span></a>, <a class="reference internal" href="../classes/class_btcomposite.html#class-btcomposite"><span class="std std-ref">BTComposite</span></a>.
+More on task types you can read in the <a class="reference internal" href="introduction.html#introduction"><span class="std std-ref">Introduction to Behavior Trees</span></a>.</p>
+<blockquote>
+<div><p><strong>🛈 Note:</strong> To help you write new tasks, you can add a script template to
+your project using “Misc → Create script template” menu option.</p>
+</div></blockquote>
+<p>Using the <a class="reference internal" href="../classes/class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> is covered in <a class="reference internal" href="using-blackboard.html#accessing-blackboard"><span class="std std-ref">Accessing the Blackboard in a Task</span></a>.</p>
+<section id="task-anatomy">
+<h2>Task anatomy<a class="headerlink" href="#task-anatomy" title="Link to this heading"></a></h2>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">@</span><span class="k">tool</span>
+<span class="k">extends</span><span class="w"> </span><span class="n">BTAction</span>
+
+<span class="c1"># Task parameters.</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">parameter1</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">parameter2</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span>
+
+<span class="c1">## Note: Each method declaration is optional.</span>
+<span class="c1">## At minimum, you only need to define the &quot;_tick&quot; method.</span>
+
+
+<span class="c1"># Called to generate a display name for the task (requires @tool).</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_generate_name</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;MyTask&quot;</span>
+
+
+<span class="c1"># Called to initialize the task.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_setup</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+
+<span class="c1"># Called when the task is entered.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_enter</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+
+<span class="c1"># Called when the task is exited.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_exit</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+
+<span class="c1"># Called each time this task is ticked (aka executed).</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">SUCCESS</span>
+
+
+<span class="c1"># Strings returned from this method are displayed as warnings in the editor.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_get_configuration_warnings</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">PackedStringArray</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">warnings</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">PackedStringArray</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">warnings</span>
+</pre></div>
+</div>
+</section>
+<section id="example-1-a-simple-action">
+<h2>Example 1: A simple action<a class="headerlink" href="#example-1-a-simple-action" title="Link to this heading"></a></h2>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">@</span><span class="k">tool</span>
+<span class="k">extends</span><span class="w"> </span><span class="n">BTAction</span>
+
+<span class="c1">## Shows or hides a node and returns SUCCESS.</span>
+<span class="c1">## Returns FAILURE if the node is not found.</span>
+
+<span class="c1"># Task parameters.</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">node_path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">NodePath</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">visible</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
+
+
+<span class="c1"># Called to generate a display name for the task (requires @tool).</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_generate_name</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;SetVisible  </span><span class="si">%s</span><span class="s2">  node_path: </span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">[</span><span class="n">visible</span><span class="p">,</span><span class="w"> </span><span class="n">node_path</span><span class="p">]</span>
+
+
+<span class="c1"># Called each time this task is ticked (aka executed).</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">p_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">n</span><span class="p">:</span><span class="w"> </span><span class="n">CanvasItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scene_root</span><span class="o">.</span><span class="n">get_node_or_null</span><span class="p">(</span><span class="n">node_path</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">is_instance_valid</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">        </span><span class="n">n</span><span class="o">.</span><span class="n">visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">visible</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">SUCCESS</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">FAILURE</span>
+</pre></div>
+</div>
+</section>
+<section id="example-2-inrange-condition">
+<span id="example-in-range"></span><h2>Example 2: InRange condition<a class="headerlink" href="#example-2-inrange-condition" title="Link to this heading"></a></h2>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">@</span><span class="k">tool</span>
+<span class="k">extends</span><span class="w"> </span><span class="n">BTCondition</span>
+
+<span class="c1">## InRange condition checks if the agent is within a range of target,</span>
+<span class="c1">## defined by distance_min and distance_max.</span>
+<span class="c1">## Returns SUCCESS if the agent is within the defined range;</span>
+<span class="c1">## otherwise, returns FAILURE.</span>
+
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">distance_min</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">distance_max</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">target_var</span><span class="p">:</span><span class="w"> </span><span class="n">StringName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;target&quot;</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">_min_distance_squared</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span>
+<span class="k">var</span><span class="w"> </span><span class="n">_max_distance_squared</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span>
+
+
+<span class="c1"># Called to generate a display name for the task.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_generate_name</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">:</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;InRange (</span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="s2">) of </span><span class="si">%s</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">[</span><span class="n">distance_min</span><span class="p">,</span><span class="w"> </span><span class="n">distance_max</span><span class="p">,</span>
+<span class="w">        </span><span class="n">LimboUtility</span><span class="o">.</span><span class="n">decorate_var</span><span class="p">(</span><span class="n">target_var</span><span class="p">)]</span>
+
+
+<span class="c1"># Called to initialize the task.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_setup</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">_min_distance_squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distance_min</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">distance_min</span>
+<span class="w">    </span><span class="n">_max_distance_squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">distance_max</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">distance_max</span>
+
+
+<span class="c1"># Called when the task is executed.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_tick</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Status</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">target</span><span class="p">:</span><span class="w"> </span><span class="n">Node2D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blackboard</span><span class="o">.</span><span class="n">get_var</span><span class="p">(</span><span class="n">target_var</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">is_instance_valid</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">FAILURE</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">dist_sq</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">agent</span><span class="o">.</span><span class="n">global_position</span><span class="o">.</span><span class="n">distance_squared_to</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">global_position</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">dist_sq</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">_min_distance_squared</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">dist_sq</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">_max_distance_squared</span><span class="p">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">SUCCESS</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">FAILURE</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction to Behavior Trees" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="using-blackboard.html" class="btn btn-neutral float-right" title="Sharing data using Blackboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

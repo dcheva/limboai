@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTFail &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BTForEach" href="class_btforeach.html" />
+    <link rel="prev" title="BTEvaluateExpression" href="class_btevaluateexpression.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BTFail</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="btfail">
+<span id="class-btfail"></span><h1>BTFail<a class="headerlink" href="#btfail" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong> <a class="reference internal" href="class_btaction.html#class-btaction"><span class="std std-ref">BTAction</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_bttask.html#class-bttask"><span class="std std-ref">BTTask</span></a> <strong>&lt;</strong> <a class="reference internal" href="class_bt.html#class-bt"><span class="std std-ref">BT</span></a></p>
+<p>BT action that always returns <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_btevaluateexpression.html" class="btn btn-neutral float-left" title="BTEvaluateExpression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_btforeach.html" class="btn btn-neutral float-right" title="BTForEach" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

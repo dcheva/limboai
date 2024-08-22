@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackboard &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BBParam" href="class_bbparam.html" />
+    <link rel="prev" title="BTPlayer" href="class_btplayer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Blackboard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting-started/featured-classes.html">Important classes</a></li>
+      <li class="breadcrumb-item active">Blackboard</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="blackboard">
+<span id="class-blackboard"></span><h1>Blackboard<a class="headerlink" href="#blackboard" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong></p>
+<p>A key/value storage for sharing among <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> states and <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> tasks.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>Blackboard is where data is stored and shared between states in the <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> system and tasks in a <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>. Each state and task in the <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> can access this Blackboard, allowing them to read and write data. This makes it easy to share information between different actions and behaviors.</p>
+<p>Blackboard can also act as a parent scope for another Blackboard. If a specific variable is not found in the active scope, it looks in the parent Blackboard to find it. A parent Blackboard can itself have its own parent scope, forming what we call a “blackboard scope chain.” Importantly, there is no limit to how many Blackboards can be in this chain, and the Blackboard doesn’t modify values in the parent scopes.</p>
+<p>New scopes can be created using the <a class="reference internal" href="class_btnewscope.html#class-btnewscope"><span class="std std-ref">BTNewScope</span></a> and <a class="reference internal" href="class_btsubtree.html#class-btsubtree"><span class="std std-ref">BTSubtree</span></a> decorators. Additionally, a new scope is automatically created for any <a class="reference internal" href="class_limbostate.html#class-limbostate"><span class="std std-ref">LimboState</span></a> that has defined non-empty Blackboard data or for any root-level <a class="reference internal" href="class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> node.</p>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-bind-var-to-property"><span class="std std-ref">bind_var_to_property</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, object: <code class="docutils literal notranslate"><span class="pre">Object</span></code>, property: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, create: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = false)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-clear"><span class="std std-ref">clear</span></a>()</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-erase-var"><span class="std std-ref">erase_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-get-parent"><span class="std std-ref">get_parent</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Variant</span></code></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-get-var"><span class="std std-ref">get_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, default: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null, complain: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = true) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Dictionary</span></code></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-get-vars-as-dict"><span class="std std-ref">get_vars_as_dict</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-has-var"><span class="std std-ref">has_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-link-var"><span class="std std-ref">link_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, target_blackboard: <a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a>, target_var: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, create: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = false)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="xref std std-ref">Array</span>[<code class="docutils literal notranslate"><span class="pre">StringName</span></code>]</p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-list-vars"><span class="std std-ref">list_vars</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-populate-from-dict"><span class="std std-ref">populate_from_dict</span></a>(dictionary: <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-set-parent"><span class="std std-ref">set_parent</span></a>(blackboard: <a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-set-var"><span class="std std-ref">set_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, value: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-top"><span class="std std-ref">top</span></a>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-blackboard-method-unbind-var"><span class="std std-ref">unbind_var</span></a>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-blackboard-method-bind-var-to-property"><abbr title="No return value.">void</abbr> <strong>bind_var_to_property</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, object: <code class="docutils literal notranslate"><span class="pre">Object</span></code>, property: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, create: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = false) <a class="reference internal" href="#class-blackboard-method-bind-var-to-property"><span class="std std-ref">🔗</span></a></p>
+<p>Establish a binding between a variable and the object’s property specified by <code class="docutils literal notranslate"><span class="pre">property</span></code> and <code class="docutils literal notranslate"><span class="pre">object</span></code>. Changes to the variable update the property, and vice versa. If <code class="docutils literal notranslate"><span class="pre">create</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the variable will be created if it doesn’t exist.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-clear"><abbr title="No return value.">void</abbr> <strong>clear</strong>() <a class="reference internal" href="#class-blackboard-method-clear"><span class="std std-ref">🔗</span></a></p>
+<p>Removes all variables from the Blackboard. Parent scopes are not affected.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-erase-var"><abbr title="No return value.">void</abbr> <strong>erase_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>) <a class="reference internal" href="#class-blackboard-method-erase-var"><span class="std std-ref">🔗</span></a></p>
+<p>Removes a variable by its name.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-get-parent"><a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>get_parent</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-get-parent"><span class="std std-ref">🔗</span></a></p>
+<p>Returns a Blackboard that serves as the parent scope for this instance.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-get-var"><code class="docutils literal notranslate"><span class="pre">Variant</span></code> <strong>get_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, default: <code class="docutils literal notranslate"><span class="pre">Variant</span></code> = null, complain: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = true) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-get-var"><span class="std std-ref">🔗</span></a></p>
+<p>Returns variable value or <code class="docutils literal notranslate"><span class="pre">default</span></code> if variable doesn’t exist. If <code class="docutils literal notranslate"><span class="pre">complain</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, an error will be printed if variable doesn’t exist.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-get-vars-as-dict"><code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> <strong>get_vars_as_dict</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-get-vars-as-dict"><span class="std std-ref">🔗</span></a></p>
+<p>Returns all variables in the Blackboard as a dictionary. Keys are the variable names, values are the variable values. Parent scopes are not included.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-has-var"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>has_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-has-var"><span class="std std-ref">🔗</span></a></p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the Blackboard contains the <code class="docutils literal notranslate"><span class="pre">var_name</span></code> variable, including the parent scopes.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-link-var"><abbr title="No return value.">void</abbr> <strong>link_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, target_blackboard: <a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a>, target_var: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, create: <code class="docutils literal notranslate"><span class="pre">bool</span></code> = false) <a class="reference internal" href="#class-blackboard-method-link-var"><span class="std std-ref">🔗</span></a></p>
+<p>Links a variable to another Blackboard variable. If a variable is linked to another variable, their state will always be identical, and any change to one will be reflected in the other. If <code class="docutils literal notranslate"><span class="pre">create</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the variable will be created if it doesn’t exist.</p>
+<p>You can use this method to link a variable in the current scope to a variable in another scope, or in another Blackboard instance. A variable can only be linked to one other variable. Calling this method again will overwrite the previous link. However, it is possible to link to the same variable from multiple different variables.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-list-vars"><span class="xref std std-ref">Array</span>[<code class="docutils literal notranslate"><span class="pre">StringName</span></code>] <strong>list_vars</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-list-vars"><span class="std std-ref">🔗</span></a></p>
+<p>Returns all variable names in the Blackboard. Parent scopes are not included.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-populate-from-dict"><abbr title="No return value.">void</abbr> <strong>populate_from_dict</strong>(dictionary: <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>) <a class="reference internal" href="#class-blackboard-method-populate-from-dict"><span class="std std-ref">🔗</span></a></p>
+<p>Fills the Blackboard with multiple variables from a dictionary. The dictionary keys must be variable names and the dictionary values must be variable values. Keys must be StringName or String.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-set-parent"><abbr title="No return value.">void</abbr> <strong>set_parent</strong>(blackboard: <a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a>) <a class="reference internal" href="#class-blackboard-method-set-parent"><span class="std std-ref">🔗</span></a></p>
+<p>Assigns the parent scope. If a value isn’t in the current Blackboard scope, it will look in the parent scope Blackboard to find it.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-set-var"><abbr title="No return value.">void</abbr> <strong>set_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>, value: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>) <a class="reference internal" href="#class-blackboard-method-set-var"><span class="std std-ref">🔗</span></a></p>
+<p>Assigns a value to a Blackboard variable.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-top"><a class="reference internal" href="#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>top</strong>() <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-blackboard-method-top"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the topmost <strong>Blackboard</strong> in the scope chain.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-blackboard-method-unbind-var"><abbr title="No return value.">void</abbr> <strong>unbind_var</strong>(var_name: <code class="docutils literal notranslate"><span class="pre">StringName</span></code>) <a class="reference internal" href="#class-blackboard-method-unbind-var"><span class="std std-ref">🔗</span></a></p>
+<p>Remove binding from a variable.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_btplayer.html" class="btn btn-neutral float-left" title="BTPlayer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_bbparam.html" class="btn btn-neutral float-right" title="BBParam" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

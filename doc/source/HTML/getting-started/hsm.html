@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>State Machines &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using GDExtension" href="gdextension.html" />
+    <link rel="prev" title="Accessing nodes in the scene tree" href="accessing-nodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">State Machines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#initialization">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-example">State example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#events-and-transitions">Events and transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#state-anatomy">State anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-behavior-trees-with-state-machines">Using behavior trees with state machines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-file-state-machine-setup">Single-file state machine setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classes/class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">State Machines</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/getting-started/hsm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="state-machines">
+<span id="hsm"></span><h1>State Machines<a class="headerlink" href="#state-machines" title="Link to this heading"></a></h1>
+<p>This guide will show how to set up and use a state machine using <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a>.</p>
+<section id="initialization">
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
+<p>To use the <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> state machine, you first need to initialize it in your code.
+This is typically done in the <code class="docutils literal notranslate"><span class="pre">_ready</span></code> function of your script. Here’s an example of how to do this:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">hsm</span><span class="p">:</span><span class="w"> </span><span class="n">LimboHSM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">LimboHSM</span>
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">idle_state</span><span class="p">:</span><span class="w"> </span><span class="n">LimboState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">LimboHSM</span><span class="o">/</span><span class="n">IdleState</span>
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">move_state</span><span class="p">:</span><span class="w"> </span><span class="n">LimboState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">LimboHSM</span><span class="o">/</span><span class="n">MoveState</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">_init_state_machine</span><span class="p">()</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_init_state_machine</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">idle_state</span><span class="p">,</span><span class="w"> </span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="n">idle_state</span><span class="o">.</span><span class="n">EVENT_FINISHED</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="n">idle_state</span><span class="p">,</span><span class="w"> </span><span class="n">move_state</span><span class="o">.</span><span class="n">EVENT_FINISHED</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we first declare the state machine and the states we want to use.
+Then, in the <code class="docutils literal notranslate"><span class="pre">_init_state_machine</span></code> function, we add transitions between the states.
+Finally, we initialize the state machine and set it to active.</p>
+</section>
+<section id="state-example">
+<h2>State example<a class="headerlink" href="#state-example" title="Link to this heading"></a></h2>
+<p>You can define the behavior of a state in a script and attach it to the state node.
+Here’s an example of a state that plays an animation on an <code class="docutils literal notranslate"><span class="pre">AnimationPlayer</span></code> and waits for it to finish:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">LimboState</span>
+<span class="c1">## PlayAnimation: Play an animation on AnimationPlayer, and wait for it to finish.</span>
+
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">animation_player</span><span class="p">:</span><span class="w"> </span><span class="n">AnimationPlayer</span>
+<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">animation_name</span><span class="p">:</span><span class="w"> </span><span class="n">StringName</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_enter</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">animation_player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">animation_name</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_update</span><span class="p">(</span><span class="n">_delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">animation_player</span><span class="o">.</span><span class="n">is_playing</span><span class="p">()</span><span class="w"> </span>\
+<span class="w">            </span><span class="ow">or</span><span class="w"> </span><span class="n">animation_player</span><span class="o">.</span><span class="n">assigned_animation</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">animation_name</span><span class="p">:</span>
+<span class="w">        </span><span class="n">dispatch</span><span class="p">(</span><span class="n">EVENT_FINISHED</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">_enter</span></code> method is called when the state is entered, and it plays the specified animation.
+The <code class="docutils literal notranslate"><span class="pre">_update</span></code> method is called every frame, and it checks if the animation is finished.
+If it is, it dispatches the <code class="docutils literal notranslate"><span class="pre">EVENT_FINISHED</span></code> event, which can result in a transition to the next state.</p>
+</section>
+<section id="events-and-transitions">
+<h2>Events and transitions<a class="headerlink" href="#events-and-transitions" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> comes with an <strong>event system</strong> that helps
+to <strong>decouple transitions</strong> from the state implementations.
+A transition is associated with a specific event, a starting state, and a destination state,
+and it is performed automatically when such an event is dispatched.</p>
+<p>To register a transition and associate it with a specific event, you can use the
+<a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm-method-add-transition"><span class="std std-ref">LimboHSM.add_transition</span></a> method:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">idle_state</span><span class="p">,</span><span class="w"> </span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;movement_started&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this example, we’re registering a transition from the <code class="docutils literal notranslate"><span class="pre">idle_state</span></code> to the <code class="docutils literal notranslate"><span class="pre">move_state</span></code>
+when the <code class="docutils literal notranslate"><span class="pre">movement_started</span></code> event is dispatched.</p>
+<p>A transition can be also associated with no particular starting state:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">hsm</span><span class="o">.</span><span class="n">ANYSTATE</span><span class="p">,</span><span class="w"> </span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;movement_started&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Events are dispatched</strong> with the <a class="reference internal" href="../classes/class_limbostate.html#class-limbostate-method-dispatch"><span class="std std-ref">LimboState.dispatch</span></a> method.
+It’s important to note that this method can be called from anywhere in the state machine hierarchy and outside of it.
+Events are <strong>propagated from the leaf to the root</strong> state. This means that if an event is consumed by a state,
+it won’t be propagated to its parent states.</p>
+<p>States can also define <strong>event handlers</strong>, which are methods that react to specific events.
+These event handlers typically don’t result in a state transition;
+they are simply a mechanism for states to react to particular events.
+You can use the <a class="reference internal" href="../classes/class_limbostate.html#class-limbostate-method-add-event-handler"><span class="std std-ref">LimboState.add_event_handler</span></a> method
+to register event handlers in your states:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">LimboState</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_setup</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">add_event_handler</span><span class="p">(</span><span class="s2">&quot;movement_started&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_on_movement_started</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_on_movement_started</span><span class="p">(</span><span class="n">cargo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Handle the &quot;movement_started&quot; event here.</span>
+<span class="w">    </span><span class="c1"># `cargo` can be passed with the event when calling `dispatch()`.</span>
+<span class="w">    </span><span class="c1"># It&#39;s quite handy when you need to pass some data to the event handler.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="bp">true</span>
+</pre></div>
+</div>
+<p>If the event handler returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, the event will be considered as consumed,
+and it won’t propagate further or result in a state transition.</p>
+</section>
+<section id="state-anatomy">
+<h2>State anatomy<a class="headerlink" href="#state-anatomy" title="Link to this heading"></a></h2>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">LimboState</span>
+
+<span class="c1">## Called once, when state is initialized.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_setup</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+<span class="c1">## Called when state is entered.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_enter</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+<span class="c1">## Called when state is exited.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_exit</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+
+<span class="c1">## Called each frame when this state is active.</span>
+<span class="k">func</span><span class="w"> </span><span class="n">_update</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="using-behavior-trees-with-state-machines">
+<h2>Using behavior trees with state machines<a class="headerlink" href="#using-behavior-trees-with-state-machines" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="../classes/class_btstate.html#class-btstate"><span class="std std-ref">BTState</span></a> is a specialized state node in <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> that can host a behavior tree.
+When a <a class="reference internal" href="../classes/class_btstate.html#class-btstate"><span class="std std-ref">BTState</span></a> is active, it executes the hosted behavior tree each frame,
+effectively using the behavior tree as its implementation.</p>
+<p>This allows you to combine the power of behavior trees with the structure and control of state machines.
+Behavior trees are excellent for defining complex, hierarchical behaviors,
+while state machines are great for managing the flow and transitions between different behaviors.</p>
+</section>
+<section id="single-file-state-machine-setup">
+<h2>Single-file state machine setup<a class="headerlink" href="#single-file-state-machine-setup" title="Link to this heading"></a></h2>
+<p>In certain scenarios, such as prototyping or during game jams,
+it’s practical to keep the state machine code in a single file.
+For such cases, <a class="reference internal" href="../classes/class_limbohsm.html#class-limbohsm"><span class="std std-ref">LimboHSM</span></a> <strong>supports delegation</strong> and provides <strong>chained methods</strong> for easier setup.
+Let’s illustrate this with a practical code example:</p>
+<div class="highlight-gdscript notranslate"><div class="highlight"><pre><span></span><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody2D</span>
+
+<span class="k">var</span><span class="w"> </span><span class="n">hsm</span><span class="p">:</span><span class="w"> </span><span class="n">LimboHSM</span>
+
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">animation_player</span><span class="p">:</span><span class="w"> </span><span class="n">AnimationPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationPlayer</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">_init_state_machine</span><span class="p">()</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_init_state_machine</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="n">hsm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LimboHSM</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="w">    </span><span class="n">add_child</span><span class="p">(</span><span class="n">hsm</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1"># Use chained methods and delegation to set up states:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">idle_state</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">LimboState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="o">.</span><span class="n">named</span><span class="p">(</span><span class="s2">&quot;Idle&quot;</span><span class="p">)</span><span class="w"> </span>\
+<span class="w">        </span><span class="o">.</span><span class="n">call_on_enter</span><span class="p">(</span><span class="k">func</span><span class="p">():</span><span class="w"> </span><span class="n">animation_player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;idle&quot;</span><span class="p">))</span><span class="w"> </span>\
+<span class="w">        </span><span class="o">.</span><span class="n">call_on_update</span><span class="p">(</span><span class="n">_idle_update</span><span class="p">)</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">move_state</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">LimboState</span><span class="o">.</span><span class="n">new</span><span class="p">()</span><span class="o">.</span><span class="n">named</span><span class="p">(</span><span class="s2">&quot;Move&quot;</span><span class="p">)</span><span class="w"> </span>\
+<span class="w">        </span><span class="o">.</span><span class="n">call_on_enter</span><span class="p">(</span><span class="k">func</span><span class="p">():</span><span class="w"> </span><span class="n">animation_player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">))</span><span class="w"> </span>\
+<span class="w">        </span><span class="o">.</span><span class="n">call_on_update</span><span class="p">(</span><span class="n">_move_update</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">idle_state</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">move_state</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">idle_state</span><span class="p">,</span><span class="w"> </span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;movement_started&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">add_transition</span><span class="p">(</span><span class="n">move_state</span><span class="p">,</span><span class="w"> </span><span class="n">idle_state</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;movement_ended&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="w">    </span><span class="n">hsm</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_idle_update</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="s2">&quot;ui_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">dir</span><span class="o">.</span><span class="n">is_zero_approx</span><span class="p">():</span>
+<span class="w">        </span><span class="n">hsm</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">&quot;movement_started&quot;</span><span class="p">)</span>
+
+
+<span class="k">func</span><span class="w"> </span><span class="n">_move_update</span><span class="p">(</span><span class="n">delta</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span>
+<span class="w">        </span><span class="o">&amp;</span><span class="s2">&quot;ui_left&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_right&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_up&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="s2">&quot;ui_down&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">desired_velocity</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">200.0</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desired_velocity</span>
+<span class="w">    </span><span class="n">move_and_slide</span><span class="p">()</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">desired_velocity</span><span class="o">.</span><span class="n">is_zero_approx</span><span class="p">():</span>
+<span class="w">        </span><span class="n">hsm</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="s2">&quot;movement_ended&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accessing-nodes.html" class="btn btn-neutral float-left" title="Accessing nodes in the scene tree" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gdextension.html" class="btn btn-neutral float-right" title="Using GDExtension" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

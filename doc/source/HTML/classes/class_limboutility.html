@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimboUtility &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="BTWaitTicks" href="class_btwaitticks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LimboUtility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LimboUtility</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="limboutility">
+<span id="class-limboutility"></span><h1>LimboUtility<a class="headerlink" href="#limboutility" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong></p>
+<p>Helper functions for LimboAI.</p>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-decorate-output-var"><span class="std std-ref">decorate_output_var</span></a>(variable: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-decorate-var"><span class="std std-ref">decorate_var</span></a>(variable: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-get-check-operator-string"><span class="std std-ref">get_check_operator_string</span></a>(check: <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-get-operation-string"><span class="std std-ref">get_operation_string</span></a>(operation: <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">String</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-get-status-name"><span class="std std-ref">get_status_name</span></a>(status: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Texture2D</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-get-task-icon"><span class="std std-ref">get_task_icon</span></a>(class_or_script_path: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-perform-check"><span class="std std-ref">perform_check</span></a>(check: <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a>, a: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, b: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Variant</span></code></p></td>
+<td><p><a class="reference internal" href="#class-limboutility-method-perform-operation"><span class="std std-ref">perform_operation</span></a>(operation: <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a>, a: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, b: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Link to this heading"></a></h2>
+<p class="classref-enumeration" id="enum-limboutility-checktype">enum <strong>CheckType</strong>: <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-equal"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_EQUAL</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<p>Equality Check.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-less-than"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_LESS_THAN</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<p>Less Than Check.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-less-than-or-equal"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_LESS_THAN_OR_EQUAL</strong> = <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
+<p>Less Than or Equal To Check.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-greater-than"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_GREATER_THAN</strong> = <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
+<p>Greater Than Check.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-greater-than-or-equal"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_GREATER_THAN_OR_EQUAL</strong> = <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
+<p>Greater Than or Equal To Check</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-check-not-equal"><a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> <strong>CHECK_NOT_EQUAL</strong> = <code class="docutils literal notranslate"><span class="pre">5</span></code></p>
+<p>Inequality Check.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-enumeration" id="enum-limboutility-operation">enum <strong>Operation</strong>: <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-none"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_NONE</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<p>No operation.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-addition"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_ADDITION</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<p>Arithmetic addition.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-subtraction"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_SUBTRACTION</strong> = <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
+<p>Arithmetic subtraction.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-multiplication"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_MULTIPLICATION</strong> = <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
+<p>Arithmetic multiplication.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-division"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_DIVISION</strong> = <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
+<p>Arithmetic division.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-modulo"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_MODULO</strong> = <code class="docutils literal notranslate"><span class="pre">5</span></code></p>
+<p>Produces the remainder of an integer division.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-power"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_POWER</strong> = <code class="docutils literal notranslate"><span class="pre">6</span></code></p>
+<p>Multiply <code class="docutils literal notranslate"><span class="pre">a</span></code> by itself <code class="docutils literal notranslate"><span class="pre">b</span></code> times.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-bit-shift-left"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_BIT_SHIFT_LEFT</strong> = <code class="docutils literal notranslate"><span class="pre">7</span></code></p>
+<p>Bitwise left shift.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-bit-shift-right"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_BIT_SHIFT_RIGHT</strong> = <code class="docutils literal notranslate"><span class="pre">8</span></code></p>
+<p>Bitwise right shift.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-bit-and"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_BIT_AND</strong> = <code class="docutils literal notranslate"><span class="pre">9</span></code></p>
+<p>Bitwise AND.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-bit-or"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_BIT_OR</strong> = <code class="docutils literal notranslate"><span class="pre">10</span></code></p>
+<p>Bitwise OR.</p>
+<p class="classref-enumeration-constant" id="class-limboutility-constant-operation-bit-xor"><a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> <strong>OPERATION_BIT_XOR</strong> = <code class="docutils literal notranslate"><span class="pre">11</span></code></p>
+<p>Bitwise XOR.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-limboutility-method-decorate-output-var"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>decorate_output_var</strong>(variable: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-decorate-output-var"><span class="std std-ref">🔗</span></a></p>
+<p>Just like <a class="reference internal" href="#class-limboutility-method-decorate-var"><span class="std std-ref">decorate_var</span></a>, produces a string with a <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> variable name that is formatted for display, and also adds an additional symbol to indicate that the variable is used as an output.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-decorate-var"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>decorate_var</strong>(variable: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-decorate-var"><span class="std std-ref">🔗</span></a></p>
+<p>Produces a string with a <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> variable name that is formatted for display or console output.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-get-check-operator-string"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>get_check_operator_string</strong>(check: <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-get-check-operator-string"><span class="std std-ref">🔗</span></a></p>
+<p>Returns an operator string for a <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a> enum value. For example, <a class="reference internal" href="#class-limboutility-constant-check-equal"><span class="std std-ref">CHECK_EQUAL</span></a> returns “==”.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-get-operation-string"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>get_operation_string</strong>(operation: <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-get-operation-string"><span class="std std-ref">🔗</span></a></p>
+<p>Returns a string representation of an <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a> enum value.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-get-status-name"><code class="docutils literal notranslate"><span class="pre">String</span></code> <strong>get_status_name</strong>(status: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-get-status-name"><span class="std std-ref">🔗</span></a></p>
+<p>Returns a name of a <a class="reference internal" href="class_bttask.html#class-bttask"><span class="std std-ref">BTTask</span></a> status code.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-get-task-icon"><code class="docutils literal notranslate"><span class="pre">Texture2D</span></code> <strong>get_task_icon</strong>(class_or_script_path: <code class="docutils literal notranslate"><span class="pre">String</span></code>) <abbr title="This method has no side effects. It doesn't modify any of the instance's member variables.">const</abbr> <a class="reference internal" href="#class-limboutility-method-get-task-icon"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the icon texture associated with a task based on its class name or script resource path.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-perform-check"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>perform_check</strong>(check: <a class="reference internal" href="#enum-limboutility-checktype"><span class="std std-ref">CheckType</span></a>, a: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, b: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>) <a class="reference internal" href="#class-limboutility-method-perform-check"><span class="std std-ref">🔗</span></a></p>
+<p>Performs a <code class="docutils literal notranslate"><span class="pre">check</span></code> on two values, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, and returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the check passes.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-limboutility-method-perform-operation"><code class="docutils literal notranslate"><span class="pre">Variant</span></code> <strong>perform_operation</strong>(operation: <a class="reference internal" href="#enum-limboutility-operation"><span class="std std-ref">Operation</span></a>, a: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>, b: <code class="docutils literal notranslate"><span class="pre">Variant</span></code>) <a class="reference internal" href="#class-limboutility-method-perform-operation"><span class="std std-ref">🔗</span></a></p>
+<p>Performs an <code class="docutils literal notranslate"><span class="pre">operation</span></code> on two values, <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, and returns the result.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_btwaitticks.html" class="btn btn-neutral float-left" title="BTWaitTicks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

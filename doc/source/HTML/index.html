@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimboAI Documentation &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Behavior Trees" href="getting-started/introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#">
+            
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btplayer.html">BTPlayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes/class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LimboAI Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="limboai-documentation">
+<h1>LimboAI Documentation<a class="headerlink" href="#limboai-documentation" title="Link to this heading"></a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Link to this heading"></a></h2>
+<p><strong>LimboAI</strong> is an open-source C++ module for <strong>Godot Engine 4</strong> providing a combination of
+<strong>Behavior Trees</strong> and <strong>State Machines</strong> for crafting your game’s AI. It comes with a
+behavior tree editor, built-in documentation, visual debugger, and more! While
+it is implemented in C++, it fully supports GDScript for <a class="reference internal" href="getting-started/custom-tasks.html#custom-tasks"><span class="std std-ref">creating your own tasks</span></a>
+and states. The full list of features is available on the
+<a class="reference external" href="https://github.com/limbonaut/limboai#features">LimboAI GitHub</a> page.</p>
+<p><strong>Behavior Trees</strong> are powerful hierarchical structures used to model and control the behavior
+of agents in a game (e.g., characters, enemies, entities). They are designed to
+make it easier to create complex and highly modular behaviors for your games.
+To learn more about behavior trees, check out <a class="reference internal" href="getting-started/introduction.html#introduction"><span class="std std-ref">Introduction to Behavior Trees</span></a>.</p>
+</section>
+<section id="getting-limboai">
+<h2>Getting LimboAI<a class="headerlink" href="#getting-limboai" title="Link to this heading"></a></h2>
+<p>Precompiled builds are available on the official
+<a class="reference external" href="https://github.com/limbonaut/limboai#getting-limboai">LimboAI GitHub</a> page,
+and in the Asset Library (coming soon!).</p>
+<p>LimboAI can be used as either a C++ module or as a GDExtension shared library.
+There are some differences between the two. In short, GDExtension version is more
+convenient to use but somewhat limited in features. Whichever you choose to use,
+your project will stay compatible with both and you can switch from one to
+the other any time. For more information on this topic, see <a class="reference internal" href="getting-started/gdextension.html#gdextension"><span class="std std-ref">Using GDExtension</span></a>.</p>
+<blockquote>
+<div><p><strong>🛈 Note:</strong> Class reference is available in the side bar.</p>
+</div></blockquote>
+</section>
+<section id="first-steps">
+<h2>First steps<a class="headerlink" href="#first-steps" title="Link to this heading"></a></h2>
+<p>Choose the version you’d like to use. The module version provides better editor
+experience and performance, while the GDExtension version is more convenient to use.
+If you’re unsure, start with the GDExtension version.
+You can change your decision at any time - both versions are fully compatible.
+For more information, see <a class="reference internal" href="getting-started/gdextension.html#gdextension"><span class="std std-ref">Using GDExtension</span></a>.</p>
+<section id="with-gdextension-version">
+<h3>With GDExtension version<a class="headerlink" href="#with-gdextension-version" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Make sure you’re using the latest stable version of the Godot editor.</p></li>
+<li><p>Create a new project for your experiments with LimboAI.</p></li>
+<li><p>In Godot, click AssetLib tab at the top of the screen and search for LimboAI. Download it. LimboAI plugin will be downloaded with the demo project files. Don’t mind the errors printed at this point, this is due to the extension library not being loaded just yet.</p></li>
+<li><p>Reload your project with <cite>Project -&gt; Reload project</cite>. There shouldn’t be any errors printed now.</p></li>
+<li><p>In the project files, locate a scene file called <cite>showcase.tscn</cite> and run it. It’s the demo’s entry point.</p></li>
+</ol>
+</section>
+<section id="with-module-version">
+<h3>With module version<a class="headerlink" href="#with-module-version" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>In <a class="reference external" href="https://github.com/limbonaut/limboai/releases/">GitHub releases</a>, download the latest pre-compiled release build for your platform.</p></li>
+<li><p>Download the demo project archive from the same release.</p></li>
+<li><p>Extract the pre-compiled editor and the demo project files.</p></li>
+<li><p>Launch the pre-compiled editor binary, import and open the demo project.</p></li>
+<li><p>Run the project.</p></li>
+</ol>
+</section>
+<section id="creating-your-own-behavior-trees">
+<h3>Creating your own behavior trees<a class="headerlink" href="#creating-your-own-behavior-trees" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Make a scene file for your agent, or open an existing scene.</p></li>
+<li><p>Add a <a class="reference internal" href="classes/class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a> node to your scene.</p></li>
+<li><p>Select <a class="reference internal" href="classes/class_btplayer.html#class-btplayer"><span class="std std-ref">BTPlayer</span></a>, and create a new behavior tree in the inspector.</p></li>
+<li><p>Optionally, you can save the behavior tree to a file using the property’s context menu.</p></li>
+<li><p>Click the behavior tree property to open it in the LimboAI editor.</p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="debugging-behavior-trees">
+<h3>Debugging behavior trees<a class="headerlink" href="#debugging-behavior-trees" title="Link to this heading"></a></h3>
+<p>In Godot Engine, follow to “Bottom Panel &gt; Debugger &gt; LimboAI” tab. With the LimboAI debugger,
+you can inspect any currently active behavior tree within the running project. The debugger can be detached
+from the main editor window, which can be particularly useful if you have a HiDPI or a secondary display.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting-started/introduction.html" class="btn btn-neutral float-right" title="Introduction to Behavior Trees" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

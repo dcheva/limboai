@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BTPlayer &mdash; LimboAI 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/general.css?v=c0a7eb24" />
+      <link rel="stylesheet" type="text/css" href="../_static/dark_mode_css/dark.css?v=70edf1c7" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script src="../_static/dark_mode_js/default_light.js?v=c2e647ce"></script>
+        <script src="../_static/dark_mode_js/theme_switcher.js?v=358d3910"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Blackboard" href="class_blackboard.html" />
+    <link rel="prev" title="BTTask" href="class_bttask.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/introduction.html">Introduction to Behavior Trees</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/custom-tasks.html">Creating custom tasks in GDScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/using-blackboard.html">Sharing data using Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/accessing-nodes.html">Accessing nodes in the scene tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/hsm.html">State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/gdextension.html">Using GDExtension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/c-sharp.html">Using LimboAI with C#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/featured-classes.html">Important classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Class reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_bbaabb.html">BBAabb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbarray.html">BBArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbasis.html">BBBasis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbool.html">BBBool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbbytearray.html">BBByteArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolor.html">BBColor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbcolorarray.html">BBColorArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbdictionary.html">BBDictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat.html">BBFloat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat32array.html">BBFloat32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloat64array.html">BBFloat64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbfloatarray.html">BBFloatArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint.html">BBInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint32array.html">BBInt32Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbint64array.html">BBInt64Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbnode.html">BBNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbparam.html">BBParam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbplane.html">BBPlane</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbprojection.html">BBProjection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbquaternion.html">BBQuaternion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2.html">BBRect2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbrect2i.html">BBRect2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstring.html">BBString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringarray.html">BBStringArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbstringname.html">BBStringName</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform2d.html">BBTransform2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbtransform3d.html">BBTransform3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvariant.html">BBVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2.html">BBVector2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2array.html">BBVector2Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector2i.html">BBVector2i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3.html">BBVector3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3array.html">BBVector3Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector3i.html">BBVector3i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4.html">BBVector4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bbvector4i.html">BBVector4i</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortree.html">BehaviorTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreedata.html">BehaviorTreeData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_behaviortreeview.html">BehaviorTreeView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboard.html">Blackboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_blackboardplan.html">BlackboardPlan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bt.html">BT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btaction.html">BTAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwaysfail.html">BTAlwaysFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btalwayssucceed.html">BTAlwaysSucceed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btawaitanimation.html">BTAwaitAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcallmethod.html">BTCallMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckagentproperty.html">BTCheckAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btchecktrigger.html">BTCheckTrigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcheckvar.html">BTCheckVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomment.html">BTComment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcomposite.html">BTComposite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcondition.html">BTCondition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btconsoleprint.html">BTConsolePrint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btcooldown.html">BTCooldown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdecorator.html">BTDecorator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdelay.html">BTDelay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicselector.html">BTDynamicSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btdynamicsequence.html">BTDynamicSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btevaluateexpression.html">BTEvaluateExpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btfail.html">BTFail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btforeach.html">BTForEach</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinstance.html">BTInstance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btinvert.html">BTInvert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btnewscope.html">BTNewScope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btparallel.html">BTParallel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btpauseanimation.html">BTPauseAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btplayanimation.html">BTPlayAnimation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BTPlayer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#property-descriptions">Property Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobability.html">BTProbability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btprobabilityselector.html">BTProbabilitySelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomselector.html">BTRandomSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomsequence.html">BTRandomSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrandomwait.html">BTRandomWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeat.html">BTRepeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilfailure.html">BTRepeatUntilFailure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrepeatuntilsuccess.html">BTRepeatUntilSuccess</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btrunlimit.html">BTRunLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btselector.html">BTSelector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsequence.html">BTSequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetagentproperty.html">BTSetAgentProperty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsetvar.html">BTSetVar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstate.html">BTState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btstopanimation.html">BTStopAnimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btsubtree.html">BTSubtree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttask.html">BTTask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_bttimelimit.html">BTTimeLimit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwait.html">BTWait</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_btwaitticks.html">BTWaitTicks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbohsm.html">LimboHSM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limbostate.html">LimboState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_limboutility.html">LimboUtility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LimboAI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../getting-started/featured-classes.html">Important classes</a></li>
+      <li class="breadcrumb-item active">BTPlayer</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="hide" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="btplayer">
+<span id="class-btplayer"></span><h1>BTPlayer<a class="headerlink" href="#btplayer" title="Link to this heading"></a></h1>
+<p><strong>Inherits:</strong></p>
+<p>Player of <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> resources.</p>
+<section class="classref-introduction-group" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p><strong>BTPlayer</strong> node is used to instantiate and play <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> resources at runtime. During initialization, the behavior tree instance is given references to the agent, the <a class="reference internal" href="#class-btplayer-property-blackboard"><span class="std std-ref">blackboard</span></a>, and the current scene root. The agent can be specified by the <a class="reference internal" href="#class-btplayer-property-agent-node"><span class="std std-ref">agent_node</span></a> property (defaults to the BTPlayer’s parent node).</p>
+<p>For an introduction to behavior trees, see <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>.</p>
+</section>
+<section class="classref-reftable-group" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-active"><span class="std std-ref">active</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">NodePath</span></code></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-agent-node"><span class="std std-ref">agent_node</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NodePath(&quot;..&quot;)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-behavior-tree"><span class="std std-ref">behavior_tree</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-blackboard"><span class="std std-ref">blackboard</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-blackboard-plan"><span class="std std-ref">blackboard_plan</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-monitor-performance"><span class="std std-ref">monitor_performance</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">false</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-property-update-mode"><span class="std std-ref">update_mode</span></a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="classref-reftable-group" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="class_btinstance.html#class-btinstance"><span class="std std-ref">BTInstance</span></a></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-method-get-bt-instance"><span class="std std-ref">get_bt_instance</span></a>()</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-method-restart"><span class="std std-ref">restart</span></a>()</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-method-set-bt-instance"><span class="std std-ref">set_bt_instance</span></a>(bt_instance: <a class="reference internal" href="class_btinstance.html#class-btinstance"><span class="std std-ref">BTInstance</span></a>)</p></td>
+</tr>
+<tr class="row-even"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-method-set-scene-root-hint"><span class="std std-ref">set_scene_root_hint</span></a>(scene_root: <code class="docutils literal notranslate"><span class="pre">Node</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><abbr title="No return value.">void</abbr></p></td>
+<td><p><a class="reference internal" href="#class-btplayer-method-update"><span class="std std-ref">update</span></a>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Link to this heading"></a></h2>
+<p class="classref-signal" id="class-btplayer-signal-behavior-tree-finished"><strong>behavior_tree_finished</strong>(status: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <a class="reference internal" href="#class-btplayer-signal-behavior-tree-finished"><span class="std std-ref">🔗</span></a></p>
+<p><strong>Deprecated:</strong> Use <a class="reference internal" href="#class-btplayer-signal-updated"><span class="std std-ref">updated</span></a> signal instead.</p>
+<p>Emitted when the behavior tree has finished executing and returned <code class="docutils literal notranslate"><span class="pre">SUCCESS</span></code> or <code class="docutils literal notranslate"><span class="pre">FAILURE</span></code>.</p>
+<p>Argument <code class="docutils literal notranslate"><span class="pre">status</span></code> holds the status returned by the behavior tree. See <a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-signal" id="class-btplayer-signal-updated"><strong>updated</strong>(status: <code class="docutils literal notranslate"><span class="pre">int</span></code>) <a class="reference internal" href="#class-btplayer-signal-updated"><span class="std std-ref">🔗</span></a></p>
+<p>Emitted when BTPlayer has finished the behavior tree update.</p>
+<p>Argument <code class="docutils literal notranslate"><span class="pre">status</span></code> holds the status returned by the behavior tree. See <a class="reference internal" href="class_bt.html#enum-bt-status"><span class="std std-ref">Status</span></a>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="enumerations">
+<h2>Enumerations<a class="headerlink" href="#enumerations" title="Link to this heading"></a></h2>
+<p class="classref-enumeration" id="enum-btplayer-updatemode">enum <strong>UpdateMode</strong>: <a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">🔗</span></a></p>
+<p class="classref-enumeration-constant" id="class-btplayer-constant-idle"><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong>IDLE</strong> = <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<p>Execute behavior tree during the idle process.</p>
+<p class="classref-enumeration-constant" id="class-btplayer-constant-physics"><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong>PHYSICS</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<p>Execute behavior tree during the physics process.</p>
+<p class="classref-enumeration-constant" id="class-btplayer-constant-manual"><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong>MANUAL</strong> = <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
+<p>Behavior tree is executed manually by calling <a class="reference internal" href="#class-btplayer-method-update"><span class="std std-ref">update</span></a>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="property-descriptions">
+<h2>Property Descriptions<a class="headerlink" href="#property-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-property" id="class-btplayer-property-active"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>active</strong> = <code class="docutils literal notranslate"><span class="pre">true</span></code> <a class="reference internal" href="#class-btplayer-property-active"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_active</strong>(value: <code class="docutils literal notranslate"><span class="pre">bool</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>get_active</strong>()</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, the behavior tree will be executed during update.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-agent-node"><code class="docutils literal notranslate"><span class="pre">NodePath</span></code> <strong>agent_node</strong> = <code class="docutils literal notranslate"><span class="pre">NodePath(&quot;..&quot;)</span></code> <a class="reference internal" href="#class-btplayer-property-agent-node"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_agent_node</strong>(value: <code class="docutils literal notranslate"><span class="pre">NodePath</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NodePath</span></code> <strong>get_agent_node</strong>()</p></li>
+</ul>
+<p>Path to the node that will be used as the agent. Setting it after instantiation will have no effect.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-behavior-tree"><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> <strong>behavior_tree</strong> <a class="reference internal" href="#class-btplayer-property-behavior-tree"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_behavior_tree</strong>(value: <a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a>)</p></li>
+<li><p><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> <strong>get_behavior_tree</strong>()</p></li>
+</ul>
+<p><a class="reference internal" href="class_behaviortree.html#class-behaviortree"><span class="std std-ref">BehaviorTree</span></a> resource to instantiate and execute at runtime.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-blackboard"><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>blackboard</strong> <a class="reference internal" href="#class-btplayer-property-blackboard"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_blackboard</strong>(value: <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>)</p></li>
+<li><p><a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> <strong>get_blackboard</strong>()</p></li>
+</ul>
+<p>Holds data shared by the behavior tree tasks. See <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-blackboard-plan"><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a> <strong>blackboard_plan</strong> <a class="reference internal" href="#class-btplayer-property-blackboard-plan"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_blackboard_plan</strong>(value: <a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a>)</p></li>
+<li><p><a class="reference internal" href="class_blackboardplan.html#class-blackboardplan"><span class="std std-ref">BlackboardPlan</span></a> <strong>get_blackboard_plan</strong>()</p></li>
+</ul>
+<p>Stores and manages variables that will be used in constructing new <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a> instances.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-monitor-performance"><code class="docutils literal notranslate"><span class="pre">bool</span></code> <strong>monitor_performance</strong> = <code class="docutils literal notranslate"><span class="pre">false</span></code> <a class="reference internal" href="#class-btplayer-property-monitor-performance"><span class="std std-ref">🔗</span></a></p>
+<p>If <code class="docutils literal notranslate"><span class="pre">true</span></code>, adds a performance monitor to “Debugger-&gt;Monitors” for each instance of this <strong>BTPlayer</strong> node.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-property" id="class-btplayer-property-update-mode"><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong>update_mode</strong> = <code class="docutils literal notranslate"><span class="pre">1</span></code> <a class="reference internal" href="#class-btplayer-property-update-mode"><span class="std std-ref">🔗</span></a></p>
+<ul class="classref-property-setget simple">
+<li><p><abbr title="No return value.">void</abbr> <strong>set_update_mode</strong>(value: <a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a>)</p></li>
+<li><p><a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a> <strong>get_update_mode</strong>()</p></li>
+</ul>
+<p>Determines when the behavior tree is executed. See <a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a>.</p>
+</section>
+<hr class="classref-section-separator docutils" />
+<section class="classref-descriptions-group" id="method-descriptions">
+<h2>Method Descriptions<a class="headerlink" href="#method-descriptions" title="Link to this heading"></a></h2>
+<p class="classref-method" id="class-btplayer-method-get-bt-instance"><a class="reference internal" href="class_btinstance.html#class-btinstance"><span class="std std-ref">BTInstance</span></a> <strong>get_bt_instance</strong>() <a class="reference internal" href="#class-btplayer-method-get-bt-instance"><span class="std std-ref">🔗</span></a></p>
+<p>Returns the behavior tree instance.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-btplayer-method-restart"><abbr title="No return value.">void</abbr> <strong>restart</strong>() <a class="reference internal" href="#class-btplayer-method-restart"><span class="std std-ref">🔗</span></a></p>
+<p>Resets the behavior tree’s execution. Each running task will be aborted and the next tree execution will start anew. This method does not reset <a class="reference internal" href="class_blackboard.html#class-blackboard"><span class="std std-ref">Blackboard</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-btplayer-method-set-bt-instance"><abbr title="No return value.">void</abbr> <strong>set_bt_instance</strong>(bt_instance: <a class="reference internal" href="class_btinstance.html#class-btinstance"><span class="std std-ref">BTInstance</span></a>) <a class="reference internal" href="#class-btplayer-method-set-bt-instance"><span class="std std-ref">🔗</span></a></p>
+<p>Sets the <a class="reference internal" href="class_btinstance.html#class-btinstance"><span class="std std-ref">BTInstance</span></a> to play. This method is useful when you want to switch to a different behavior tree instance at runtime. See also <a class="reference internal" href="class_behaviortree.html#class-behaviortree-method-instantiate"><span class="std std-ref">BehaviorTree.instantiate</span></a>.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-btplayer-method-set-scene-root-hint"><abbr title="No return value.">void</abbr> <strong>set_scene_root_hint</strong>(scene_root: <code class="docutils literal notranslate"><span class="pre">Node</span></code>) <a class="reference internal" href="#class-btplayer-method-set-scene-root-hint"><span class="std std-ref">🔗</span></a></p>
+<p>Sets the <code class="docutils literal notranslate"><span class="pre">Node</span></code> that will be used as the scene root for the newly instantiated behavior tree. Should be called before the <strong>BTPlayer</strong> is added to the scene tree (before <code class="docutils literal notranslate"><span class="pre">NOTIFICATION_READY</span></code>). This is typically useful when creating <strong>BTPlayer</strong> nodes dynamically from code.</p>
+<hr class="classref-item-separator docutils" />
+<p class="classref-method" id="class-btplayer-method-update"><abbr title="No return value.">void</abbr> <strong>update</strong>(delta: <code class="docutils literal notranslate"><span class="pre">float</span></code>) <a class="reference internal" href="#class-btplayer-method-update"><span class="std std-ref">🔗</span></a></p>
+<p>Executes the root task of the behavior tree instance if <a class="reference internal" href="#class-btplayer-property-active"><span class="std std-ref">active</span></a> is <code class="docutils literal notranslate"><span class="pre">true</span></code>. Call this method when <a class="reference internal" href="#class-btplayer-property-update-mode"><span class="std std-ref">update_mode</span></a> is set to <a class="reference internal" href="#class-btplayer-constant-manual"><span class="std std-ref">MANUAL</span></a>. When <a class="reference internal" href="#class-btplayer-property-update-mode"><span class="std std-ref">update_mode</span></a> is not <a class="reference internal" href="#class-btplayer-constant-manual"><span class="std std-ref">MANUAL</span></a>, the <a class="reference internal" href="#class-btplayer-method-update"><span class="std std-ref">update</span></a> will be called automatically. See <a class="reference internal" href="#enum-btplayer-updatemode"><span class="std std-ref">UpdateMode</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="class_bttask.html" class="btn btn-neutral float-left" title="BTTask" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="class_blackboard.html" class="btn btn-neutral float-right" title="Blackboard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-present Serhii Snitsaruk and the LimboAI contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
